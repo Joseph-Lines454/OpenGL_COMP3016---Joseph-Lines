@@ -58,7 +58,7 @@
     <None Include="..\shaders\vertexshader.vert">
       <Filter>shaders</Filter>
     </None>
-    <None Include="..\shaders\fragmentshader.txt">
+    <None Include="..\shaders\fragmentshader.frag">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>

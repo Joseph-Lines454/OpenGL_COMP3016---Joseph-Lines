@@ -9,7 +9,7 @@ void main()
   //Vertex data does not need to be passed out
   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
   //Colour data needs to go to fragementshader
-  ourColour = aColour;
+  //ourColour = aColour;
   //TextureCord needs to go to fragementshader
   FragCord = textureIn;
 }

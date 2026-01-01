@@ -7,24 +7,27 @@
       "RelativeMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|solutionrelative:COMP3016_OpenGL_Joseph_Lines\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\shaders\\LoadShaders.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|solutionrelative:shaders\\LoadShaders.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\shaders\\LoadShaders.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|solutionrelative:shaders\\LoadShaders.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\stbImageLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|solutionrelative:COMP3016_OpenGL_Joseph_Lines\\stbImageLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|solutionrelative:COMP3016_OpenGL_Joseph_Lines\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\RenderShape.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|solutionrelative:COMP3016_OpenGL_Joseph_Lines\\RenderShape.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_string_view.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\shaders\\vertexshader.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|solutionrelative:shaders\\vertexshader.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\LoadShaders.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|solutionrelative:COMP3016_OpenGL_Joseph_Lines\\LoadShaders.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\shaders\\fragmentshader.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{09C897B4-D15D-4870-8977-7B67B4B79602}|COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines.vcxproj|solutionrelative:shaders\\fragmentshader.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,71 +37,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoadShaders.cpp",
-              "DocumentMoniker": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\shaders\\LoadShaders.cpp",
-              "RelativeDocumentMoniker": "shaders\\LoadShaders.cpp",
-              "ToolTip": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\shaders\\LoadShaders.cpp",
-              "RelativeToolTip": "shaders\\LoadShaders.cpp",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAABwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-30T20:27:35.431Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoadShaders.h",
-              "DocumentMoniker": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\shaders\\LoadShaders.h",
-              "RelativeDocumentMoniker": "shaders\\LoadShaders.h",
-              "ToolTip": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\shaders\\LoadShaders.h",
-              "RelativeToolTip": "shaders\\LoadShaders.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-30T20:27:02.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "stbImageLoader.cpp",
-              "DocumentMoniker": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\stbImageLoader.cpp",
-              "RelativeDocumentMoniker": "COMP3016_OpenGL_Joseph_Lines\\stbImageLoader.cpp",
-              "ToolTip": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\stbImageLoader.cpp",
-              "RelativeToolTip": "COMP3016_OpenGL_Joseph_Lines\\stbImageLoader.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-30T17:50:26.86Z",
+              "Title": "__msvc_string_view.hpp",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_string_view.hpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_string_view.hpp",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_string_view.hpp",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_string_view.hpp",
+              "ViewState": "AgIAAL4BAAAAAAAAAAAcwMwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-01T00:41:00.454Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "RenderShape.h",
-              "DocumentMoniker": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\RenderShape.h",
-              "RelativeDocumentMoniker": "COMP3016_OpenGL_Joseph_Lines\\RenderShape.h",
-              "ToolTip": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\RenderShape.h",
-              "RelativeToolTip": "COMP3016_OpenGL_Joseph_Lines\\RenderShape.h",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHYAAAAjAAAAAAAAAA==",
+              "Title": "LoadShaders.h",
+              "DocumentMoniker": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\LoadShaders.h",
+              "RelativeDocumentMoniker": "COMP3016_OpenGL_Joseph_Lines\\LoadShaders.h",
+              "ToolTip": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\LoadShaders.h",
+              "RelativeToolTip": "COMP3016_OpenGL_Joseph_Lines\\LoadShaders.h",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-29T18:51:48.301Z",
+              "WhenOpened": "2025-12-31T23:13:10.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "fragmentshader.frag",
+              "DocumentMoniker": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\shaders\\fragmentshader.frag",
+              "RelativeDocumentMoniker": "shaders\\fragmentshader.frag",
+              "ToolTip": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\shaders\\fragmentshader.frag",
+              "RelativeToolTip": "shaders\\fragmentshader.frag",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-31T22:31:13.095Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "vertexshader.vert",
+              "DocumentMoniker": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\shaders\\vertexshader.vert",
+              "RelativeDocumentMoniker": "shaders\\vertexshader.vert",
+              "ToolTip": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\shaders\\vertexshader.vert",
+              "RelativeToolTip": "shaders\\vertexshader.vert",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-31T21:06:01.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Window.h",
               "DocumentMoniker": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\Window.h",
               "RelativeDocumentMoniker": "COMP3016_OpenGL_Joseph_Lines\\Window.h",
               "ToolTip": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\Window.h",
               "RelativeToolTip": "COMP3016_OpenGL_Joseph_Lines\\Window.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-12-29T14:11:59.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RenderShape.h",
+              "DocumentMoniker": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\RenderShape.h",
+              "RelativeDocumentMoniker": "COMP3016_OpenGL_Joseph_Lines\\RenderShape.h",
+              "ToolTip": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\RenderShape.h",
+              "RelativeToolTip": "COMP3016_OpenGL_Joseph_Lines\\RenderShape.h",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAkwGsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-12-29T18:51:48.301Z",
               "EditorCaption": ""
             },
             {
@@ -109,7 +125,7 @@
               "RelativeDocumentMoniker": "COMP3016_OpenGL_Joseph_Lines\\main.cpp",
               "ToolTip": "C:\\Users\\pring\\OneDrive\\Documents\\COMP3016 - OpenGL - Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\COMP3016_OpenGL_Joseph_Lines\\main.cpp",
               "RelativeToolTip": "COMP3016_OpenGL_Joseph_Lines\\main.cpp",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAAAHMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-29T12:18:58.38Z",
               "EditorCaption": ""

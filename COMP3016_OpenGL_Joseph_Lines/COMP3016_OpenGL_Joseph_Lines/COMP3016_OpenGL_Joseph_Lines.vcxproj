@@ -147,7 +147,7 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\shaders\fragmentshader.txt" />
+    <None Include="..\shaders\fragmentshader.frag" />
     <None Include="..\shaders\vertexshader.vert" />
   </ItemGroup>
   <ItemGroup>
