@@ -85,7 +85,8 @@ extern "C" {
 
 				GLchar* log = new GLchar[len + 1];
 				glGetShaderInfoLog(shader, len, &len, log);
-				std::cerr << "Shader compilation failed: " << log << std::endl;
+				std::cerr << "Shader compilation failed: " << log << std::endl; 
+				std::cout << "Shader compilation failed: " << log << std::endl;
 				delete[] log;
 #endif /* DEBUG */
 
@@ -109,6 +110,7 @@ extern "C" {
 			GLchar* log = new GLchar[len + 1];
 			glGetProgramInfoLog(program, len, &len, log);
 			std::cerr << "Shader linking failed: " << log << std::endl;
+			std::cout << "Shader linking failed: " << log << std::endl;
 			delete[] log;
 #endif /* DEBUG */
 
