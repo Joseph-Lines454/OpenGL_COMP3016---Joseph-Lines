@@ -53,6 +53,9 @@
     <ClInclude Include="LoadShaders.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Shapes3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\shaders\vertexshader.vert">

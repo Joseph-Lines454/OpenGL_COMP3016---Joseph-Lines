@@ -11,7 +11,7 @@
 #include <vector>
 #include "stb_image.h"
 class RenderShape {
-private:
+protected:
 	//Want this way because its dyamic to allow for differnt verticies to be inputted
 	std::vector<float> verticies;
 	std::vector<unsigned int> indicies;
@@ -56,6 +56,7 @@ private:
 	}
 
 public:
+	RenderShape() {};
 	RenderShape(std::vector<unsigned int> indiciesOrder, std::vector<float> verticies, int indiciesAmount, const char* imageurl, int stride)
 	{
 		//this->indiciesTotal = verteciesTotal;
@@ -131,6 +132,7 @@ public:
 		glBindTexture(GL_TEXTURE_2D, texture);
 		// get indice amount by dividing total bytes by bytes of one value
 		glDrawElements(GL_TRIANGLES, indiciesAmount, GL_UNSIGNED_INT, 0);
+		//glDrawArrays(GL_TRIANGLES, 0, 36);
 	}
 
 
