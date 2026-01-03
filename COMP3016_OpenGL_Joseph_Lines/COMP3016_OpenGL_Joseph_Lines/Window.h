@@ -14,10 +14,17 @@
 class Window {
 private:
 	GLFWwindow* window = glfwCreateWindow(1280, 720, "OpenGLWindow", NULL, NULL);
-	float YAW = -90.0f;
-	float Pitch = 0.0f;
-	bool Entry = false;
+	
+	//float windowHeight = 800;
+	//float windowWidth = 800;
 	float mousesensitivity = 100;
+	//glm::mat4 modelCamera = glm::mat4(1.0f);
+	//Put this in a camera class
+	//glm::vec3 User_Look_Position = glm::vec3(0.0f, 0.0f, 3.0f);
+	//glm::vec3 cameraDirectonVec = glm::vec3(0.0f, 0.0f, -1.0f);
+	//glm::vec3 cameraUp_Y = glm::vec3(0.0f, 1.0f, 0.0f);
+	//glm::mat4 viewcamera = glm::mat4(1.0f);
+	//glm::mat4 projection2;
 	
 public:
 	void static framebuffer_size_callback(GLFWwindow* window, int width, int height) {
@@ -81,13 +88,13 @@ public:
 			User_Look_Position += glm::normalize(glm::cross(cameraDirectonVec, cameraUp_Y)) * cameraSpeedforsakeoffunction;
 
 		}
-		
+
 
 		//Get the mouse position got glfw
 		double mouseX;
 		double mouseY;
 		glfwGetCursorPos(window, &mouseX, &mouseY);
-		std::cout <<"MouseX " << mouseX <<" WindowHeight: " << windowHeight << std::endl;
+		std::cout << "MouseX " << mouseX << " WindowHeight: " << windowHeight << std::endl;
 
 		//We want to rotate the axis, so we 
 		float RotateYaxis = mousesensitivity * (float)(mouseY - (windowHeight / 2)) / windowHeight;
@@ -96,7 +103,7 @@ public:
 		//This is getting the x direction - we are allowing us to spin freely
 		glm::vec3 newDirection = glm::rotate(cameraDirectonVec, glm::radians(-RotateYaxis), glm::normalize(glm::cross(cameraDirectonVec, cameraUp_Y)));
 
-		
+
 		//We need to check the Y direction - So glm::angle is used to calculate angle between the Y pos and the newDirection - we want to make sure that the camera dosent do a 360 and is essentially
 		//capped at 180degrees
 		if (!(glm::angle(newDirection, cameraUp_Y) <= glm::radians(2.0f) || (glm::angle(newDirection, -cameraUp_Y) <= glm::radians(2.0f))))
@@ -110,6 +117,21 @@ public:
 		//reset the cursor positon to the 
 		glfwSetCursorPos(window, (windowWidth / 2), (windowHeight / 2));
 		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+	}
+
+	void Camera(float deltaTime, int height, int width, GLuint getMVP)
+	{
+
+		
+		//glUniformMatrix4fv(glGetUniformLocation(program, "Model_View_Projection"), 1, GL_FALSE, value_ptr(mvp));
+		//ProcessUserInput(deltaTime);
+		//viewcamera = glm::lookAt(User_Look_Position, User_Look_Position + cameraDirectonVec, cameraUp_Y);
+		//projection2 = glm::perspective(glm::radians(45.0f), 800.0f / 720.0f, 0.1f, 100.0f);
+		//std::cout << value_ptr(mvp) << std::endl;
+		//glm::mat4 mvp = projection2 * viewcamera * modelCamera;
+		//glUniformMatrix4fv(getMVP, 1, GL_FALSE, value_ptr(mvp));
+		
+		//std::cout << "X:  " << User_Look_Position.x << "Y: " << User_Look_Position.y << "X: " << User_Look_Position.z << std::endl;
 	}
 	
 	

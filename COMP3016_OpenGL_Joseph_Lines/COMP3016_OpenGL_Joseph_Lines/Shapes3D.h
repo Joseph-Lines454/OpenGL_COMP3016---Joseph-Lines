@@ -12,9 +12,13 @@ private:
 	unsigned int VAO;
 	const char* imageurl;
 	unsigned int texture;
+	glm::mat4 view = glm::mat4(1.0f);
+	glm::mat4 projection;
+	glm::mat4 model = glm::mat4(1.0f);
 	int stride;
 	void TextureRender()
 	{
+		
 		//Offset might be issue may need to change that
 		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(5 * sizeof(float)));
 		glEnableVertexAttribArray(2);
@@ -58,9 +62,10 @@ public:
 		this->imageurl = imageurl;
 		this->stride = stride;
 	}
-	void ShapeInitialization()
+	void ShapeInitialization(float width, float height)
 	{
-
+		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.0f));
+		projection = glm::perspective(glm::radians(45.0f), (float)width / (float)height, 0.1f, 100.0f);
 		//generate an ID for our VAO
 		//unsigned int VAO;
 		//here we are generating a unique ID for the VAO
@@ -116,10 +121,9 @@ public:
 	{
 
 		//actual floating point for each vertex is 2 and has an offest of 2 ()
-
-
-
+		
 		glBindVertexArray(VAO);
+		
 		//std::cout << imageurl << std::endl;
 		glBindTexture(GL_TEXTURE_2D, texture);
 		// get indice amount by dividing total bytes by bytes of one value

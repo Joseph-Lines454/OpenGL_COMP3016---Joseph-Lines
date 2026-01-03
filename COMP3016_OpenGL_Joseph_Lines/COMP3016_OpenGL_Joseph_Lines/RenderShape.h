@@ -4,12 +4,15 @@
 
 //#include <GL/glew.h>
 #include <glad/glad.h>
-
+#include "glm/ext/vector_float3.hpp"
+#include <glm/ext/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <GLFW/glfw3.h>
 #include <filesystem>
 #include <fstream>
 #include <vector>
 #include "stb_image.h"
+
 class RenderShape {
 protected:
 	//Want this way because its dyamic to allow for differnt verticies to be inputted
@@ -124,13 +127,27 @@ public:
 	{
 		
 		//actual floating point for each vertex is 2 and has an offest of 2 ()
+		
+		
+		//glm::mat4 model = glm::mat4(1.0f);
+		//model = glm::rotate(model, glm::radians(-45.0f), glm::vec3(0.5, 1.0f, 0.0f));
+		//glm::mat4 view = glm::mat4(1.0f);
+		//view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+		//glm::mat4 projection;
+		//projection = glm::perspective(glm::radians(45.0f), (float)width / (float)height, 0.1f, 100.0f);
 
+		
 
+		//std::cout << "Here!" << std::endl;
+		//std::cout << value_ptr(mvp) << std::endl;
+		//glm::mat4 mvp = projection * view * model;
+		//glUniformMatrix4fv(getMVP, 1, GL_FALSE, value_ptr(mvp));
 
 		glBindVertexArray(VAO);
-		//std::cout << imageurl << std::endl;
+		
 		glBindTexture(GL_TEXTURE_2D, texture);
 		// get indice amount by dividing total bytes by bytes of one value
+		
 		glDrawElements(GL_TRIANGLES, indiciesAmount, GL_UNSIGNED_INT, 0);
 		//glDrawArrays(GL_TRIANGLES, 0, 36);
 	}
