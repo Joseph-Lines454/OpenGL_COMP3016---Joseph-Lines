@@ -52,7 +52,7 @@ public:
 
 		//glewInit();
 		glViewport(0, 0, 1280, 720);
-		std::cout << glGetString(GL_VERSION) << std::endl;
+		
 
 		//when the window is resized, we want to change openGL's viewport to match glfw's view
 		glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
@@ -70,7 +70,10 @@ public:
 		{
 			cameraSpeedforsakeoffunction = cameraSpeedforsakeoffunction * 2.0f;
 		}
-
+		if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		{
+			glfwTerminate();
+		}
 		if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS || glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 		{
 			User_Look_Position += cameraSpeedforsakeoffunction * cameraDirectonVec;
@@ -86,7 +89,6 @@ public:
 		if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS || glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
 		{
 			User_Look_Position += glm::normalize(glm::cross(cameraDirectonVec, cameraUp_Y)) * cameraSpeedforsakeoffunction;
-
 		}
 
 
@@ -94,7 +96,7 @@ public:
 		double mouseX;
 		double mouseY;
 		glfwGetCursorPos(window, &mouseX, &mouseY);
-		std::cout << "MouseX " << mouseX << " WindowHeight: " << windowHeight << std::endl;
+		
 
 		//We want to rotate the axis, so we 
 		float RotateYaxis = mousesensitivity * (float)(mouseY - (windowHeight / 2)) / windowHeight;
@@ -119,20 +121,7 @@ public:
 		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 	}
 
-	void Camera(float deltaTime, int height, int width, GLuint getMVP)
-	{
-
-		
-		//glUniformMatrix4fv(glGetUniformLocation(program, "Model_View_Projection"), 1, GL_FALSE, value_ptr(mvp));
-		//ProcessUserInput(deltaTime);
-		//viewcamera = glm::lookAt(User_Look_Position, User_Look_Position + cameraDirectonVec, cameraUp_Y);
-		//projection2 = glm::perspective(glm::radians(45.0f), 800.0f / 720.0f, 0.1f, 100.0f);
-		//std::cout << value_ptr(mvp) << std::endl;
-		//glm::mat4 mvp = projection2 * viewcamera * modelCamera;
-		//glUniformMatrix4fv(getMVP, 1, GL_FALSE, value_ptr(mvp));
-		
-		//std::cout << "X:  " << User_Look_Position.x << "Y: " << User_Look_Position.y << "X: " << User_Look_Position.z << std::endl;
-	}
+	
 	
 	
 

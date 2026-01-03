@@ -11,23 +11,22 @@ private:
 	std::vector<float> verticies;
 	unsigned int VAO;
 	const char* imageurl;
+	const char* MixingURL;
 	unsigned int texture;
 	glm::mat4 view = glm::mat4(1.0f);
 	glm::mat4 projection;
 	glm::mat4 model = glm::mat4(1.0f);
 	int stride;
+	unsigned int mixingTexture;
 	void TextureRender()
 	{
 		
-		//Offset might be issue may need to change that
-		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(5 * sizeof(float)));
+		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
 		glEnableVertexAttribArray(2);
-
-		std::cout << "Here" << std::endl;
 		glGenTextures(1, &texture);
 		//Binding
 		glBindTexture(GL_TEXTURE_2D, texture);
-
+		//glUniform1i(glGetUniformLocation(program, "istextureTrue"), 1);
 		//params: type of texture, texure option and appropriate axis and texure wrapping mode
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
@@ -36,31 +35,75 @@ private:
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		//Loading an image into openGL, upon a quad
 		int width, height, nrChannels;
+		stbi_set_flip_vertically_on_load(true);
 		unsigned char* data = stbi_load(imageurl, &width, &height, &nrChannels, 0);
 		//assign ID
 
 		if (data)
 		{
-			std::cout << "We have found data!" << std::endl;
+			std::cout << "We have found data! I think..." << std::endl;
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+			glGenerateMipmap(GL_TEXTURE_2D);
+		}
+		else
+		{
+			std::cout << stbi_failure_reason << std::endl;
+			std::cout << "Issue no data???" << std::endl;
 		}
 
 		//first param asks how many text second is where it stores
 
-
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-		glGenerateMipmap(GL_TEXTURE_2D);
-		//Clearing from memory
+		//Clearing from memory - we can now load our second image
 		stbi_image_free(data);
+
+		glEnableVertexAttribArray(2);
+		glGenTextures(1, &mixingTexture);
+		//Binding
+		glBindTexture(GL_TEXTURE_2D, mixingTexture);
+		//glUniform1i(glGetUniformLocation(program, "istextureTrue"), 1);
+		//params: type of texture, texure option and appropriate axis and texure wrapping mode
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+		//GL_LINEAR_MIPMAP_LINEAR - texture quality from distance - when texures are downscaled.
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		//Loading an image into openGL, upon a quad
+		
+		stbi_set_flip_vertically_on_load(true);
+		data = stbi_load(MixingURL, &width, &height, &nrChannels, 0);
+		//assign ID
+
+		if (data)
+		{
+			std::cout << "We have found data! I think..." << std::endl;
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+			glGenerateMipmap(GL_TEXTURE_2D);
+		}
+		else
+		{
+			std::cout << stbi_failure_reason << std::endl;
+			std::cout << "Issue no data???" << std::endl;
+		}
+
+		//first param asks how many text second is where it stores
+		std::cout << "we made it here..." << std::endl;
+		//Clearing from memory - we can now load our second image
+		stbi_image_free(data);
+		
+		//glUniform1i(glGetUniformLocation(program, "tex"), 0);
+		//pass this data into the vertex shader - uniforms?
+		
 	}
 
 public:
-	Shapes3D(std::vector<float> verticies, int indiciesAmount, const char* imageurl, int stride) : RenderShape()
+	Shapes3D(std::vector<float> verticies, int indiciesAmount, const char* imageurl, const char* mixtexture, int stride) : RenderShape()
 	{
 		//this->indiciesTotal = verteciesTotal;
 		this->verticies = verticies;
 		this->indiciesAmount = indiciesAmount;
 		this->imageurl = imageurl;
 		this->stride = stride;
+		this->MixingURL = mixtexture;
 	}
 	void ShapeInitialization(float width, float height)
 	{
@@ -98,17 +141,23 @@ public:
 		//appropriate offset has been applied
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof(float), (void*)0);
 		glEnableVertexAttribArray(0);
-
-		//glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride * sizeof(float), (void*)(3 * sizeof(float)));
-		//glEnableVertexAttribArray(1);
+		
 		//This needs to be conditional
 
 		if (imageurl != NULL)
 		{
+			std::cout << "Wrong texture" << std::endl;
 			TextureRender();
+			//glUniform1i(glGetUniformLocation(program, "istextureTrue"), 0);
+		}
+		else
+		{
+			std::cout << "There is no texture for this shader" << std::endl;
+			//glUniform1i(glGetUniformLocation(program, "istextureTrue"), 0);
+			//glUniform3f(glGetUniformLocation(program, "ColourUni"), 0.5, 0.0, 0.0);
 		}
 
-
+		
 		//Check for textures, if so, render
 
 
@@ -121,6 +170,11 @@ public:
 	{
 
 		//actual floating point for each vertex is 2 and has an offest of 2 ()
+		//sglEnableVertexAttribArray(1);
+		//do we pass colour in as...???
+		//glUniform1i(glGetUniformLocation(program, "istextureTrue"), 0);
+		//pass colour as uniform i guess
+		//glUniform3f(glGetUniformLocation(program, "ColourUni"), 0.5, 0.5, 0.5);
 		
 		glBindVertexArray(VAO);
 		
@@ -130,6 +184,16 @@ public:
 		//glDrawElements(GL_TRIANGLES, indiciesAmount, GL_UNSIGNED_INT, 0);
 		glDrawArrays(GL_TRIANGLES, 0, indiciesAmount);
 	}
+
+	unsigned int GetTextureOne()
+	{
+		return texture;
+	}
+
+	unsigned int GetTextureTwo() {
+		return mixingTexture;
+	}
+
 
 
 

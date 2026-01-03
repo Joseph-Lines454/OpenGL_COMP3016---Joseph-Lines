@@ -23,59 +23,73 @@ int main()
 	//std::vector<float> verticies =  {-0.1f, -0.1f, 0.0f, 1.0f, 0.0f, 0.0f,0.5f, -0.1f, 0.0f, 0.0f, 1.0f, 0.0f,0.0f, 0.1f, 0.0f, 0.0f, 0.0f, 1.0f};
 	//std::vector<unsigned int> indicies = { 1, 2, 3 };
 
-	RenderShape* render = new RenderShape({ 1, 2, 3 }, { -0.1f, -0.1f, 0.0f, 1.0f, 0.0f, 0.0f,
-		0.5f, -0.1f, 0.0f, 0.0f, 1.0f, 0.0f,
-		0.0f, 0.1f, 0.0f, 0.0f, 0.0f, 1.0f },3, NULL,3);
-	// X-Y-Z Cords - Z is Zero because we are only rendering 2D objects currently - therefore no depth is needed to the shape
 	
+	//shader import
+	//"C:/Users/pring/OneDrive/Documents/COMP3016 - OpenGL - Joseph_Lines/COMP3016_OpenGL_Joseph_Lines/shaders/vertexshader.vert"
+	ShaderInfo shaders[] = {
+		{GL_VERTEX_SHADER, "../../COMP3016_OpenGL_Joseph_Lines/shaders/vertexshader.vert"},
+		{GL_FRAGMENT_SHADER, "../../COMP3016_OpenGL_Joseph_Lines/shaders/fragmentshader.frag"},
+		{GL_NONE, NULL}
+
+	};
+	program = LoadShaders(shaders);
+
+
+
+
+	glUseProgram(program);
 
 	RenderShape* renderShape2 = new RenderShape({ 0,1,3, 1,2,3 }, {
-		0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 1.0f,0.0f, 0.0f,1.0f, -0.5f, -0.5f, 0.0f,0.0f,0.0f,1.0f, 1.0f,1.0f,-0.5f,0.5f,0.0f, 1.0f,1.0f,0.0f, 1.0f,1.0f,
+		0.5f, 0.5f,0.0f,    0.1f, 0.5f, 0.0f,   1.0f,1.0f,  // top right
+		0.5f,-0.5f,0.0f,    0.5f, 0.0f,0.0f,   1.0f,0.0f,  //bottom right
+		-0.5f,-0.5f,0.0f,   0.5f,0.0f,0.0f,    0.0f,0.0f, //bottom left
+		-0.5f,0.5f,0.0f,    0.5f,0.0f,0.0f,      0.0f,1.0f, // top left
 
 
-	}, 36, "C:/Users/pring/OneDrive/Documents/COMP3016 - OpenGL - Joseph_Lines/COMP3016_OpenGL_Joseph_Lines/textures_and_media/joseph_lines_signiture.jpg",8);
+	}, 36, "../../COMP3016_OpenGL_Joseph_Lines/textures_and_media/joseph_lines_signiture.jpg",8, program);
 	
-	Shapes3D* newShape3D = new Shapes3D({ -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-	 0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-	 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-	 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+	Shapes3D* newShape3D = new Shapes3D({ 
+	-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+	 0.5f, -0.5f, -0.5f, 1.0f, 0.0f,
+	 0.5f,  0.5f, -0.5f, 1.0f, 1.0f,
+	 0.5f,  0.5f, -0.5f, 1.0f, 1.0f,
 	-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
 	-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 
-	-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-	 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-	 0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-	 0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-	-0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-	-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+	-0.5f, -0.5f,  0.5f, 0.0f, 0.0f,
+	 0.5f, -0.5f,  0.5f, 1.0f, 0.0f,
+	 0.5f,  0.5f,  0.5f, 1.0f, 1.0f,
+	 0.5f,  0.5f,  0.5f, 1.0f, 1.0f,
+	-0.5f,  0.5f,  0.5f, 0.0f, 1.0f,
+	-0.5f, -0.5f,  0.5f, 0.0f, 0.0f,
 
-	-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-	-0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-	-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-	-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-	-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-	-0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+	-0.5f,  0.5f,  0.5f, 1.0f, 0.0f,
+	-0.5f,  0.5f, -0.5f, 1.0f, 1.0f,
+	-0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
+	-0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
+	-0.5f, -0.5f,  0.5f, 0.0f, 0.0f,
+	-0.5f,  0.5f,  0.5f, 1.0f, 0.0f,
 
-	 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-	 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-	 0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-	 0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-	 0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-	 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+	 0.5f,  0.5f,  0.5f, 1.0f, 0.0f,
+	 0.5f,  0.5f, -0.5f, 1.0f, 1.0f,
+	 0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
+	 0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
+	 0.5f, -0.5f,  0.5f, 0.0f, 0.0f,
+	 0.5f,  0.5f,  0.5f, 1.0f, 0.0f,
 
-	-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-	 0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-	 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-	 0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-	-0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-	-0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+	-0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
+	 0.5f, -0.5f, -0.5f, 1.0f, 1.0f,
+	 0.5f, -0.5f,  0.5f, 1.0f, 0.0f,
+	 0.5f, -0.5f,  0.5f, 1.0f, 0.0f,
+	-0.5f, -0.5f,  0.5f, 0.0f, 0.0f,
+	-0.5f, -0.5f, -0.5f, 0.0f, 1.0f,
 
-	-0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-	 0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-	 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-	 0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-	-0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-	-0.5f,  0.5f, -0.5f,  0.0f, 1.0f }, 36, "C:/Users/pring/OneDrive/Documents/COMP3016 - OpenGL - Joseph_Lines/COMP3016_OpenGL_Joseph_Lines/textures_and_media/joseph_lines_signiture.jpg", 5);
+	-0.5f,  0.5f, -0.5f, 0.0f, 1.0f,
+	 0.5f,  0.5f, -0.5f,1.0f, 1.0f,
+	 0.5f,  0.5f,  0.5f, 0.1f, 0.5f, 
+	 0.5f,  0.5f,  0.5f, 1.0f, 0.0f,
+	-0.5f,  0.5f,  0.5f, 0.0f, 0.0f,
+	-0.5f,  0.5f, -0.5f,  0.0f, 1.0f }, 36, "../../COMP3016_OpenGL_Joseph_Lines/textures_and_media/joseph_lines_signiture.jpg", "../../COMP3016_OpenGL_Joseph_Lines/textures_and_media/img2.png", 5);
 	
 	/*
 	Shapes3D* newShape3D = new Shapes3D({ -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
@@ -87,21 +101,9 @@ int main()
 
 
 
-	//shader import
-	ShaderInfo shaders[] = {
-		{GL_VERTEX_SHADER, "C:/Users/pring/OneDrive/Documents/COMP3016 - OpenGL - Joseph_Lines/COMP3016_OpenGL_Joseph_Lines/shaders/vertexshader.vert"},
-		{GL_FRAGMENT_SHADER, "C:/Users/pring/OneDrive/Documents/COMP3016 - OpenGL - Joseph_Lines/COMP3016_OpenGL_Joseph_Lines/shaders/fragmentshader.frag"},
-		{GL_NONE, NULL}
-
-	};
-	program = LoadShaders(shaders);
 	
-
-	
-
-	glUseProgram(program);
 	glEnable(GL_DEPTH_TEST);
-	render->ShapeInitialization();
+	
 	renderShape2->ShapeInitialization();
 
 	//Model View Projection
@@ -213,30 +215,57 @@ int main()
 		//glUniformMatrix4fv(getMVP, 1, GL_FALSE, value_ptr(mvp));
 
 		//TRANSLATION HAS TO HAPPEN BEFORE ROTATION - IMPORTANT
+
+		
 		model = glm::translate(model, glm::vec3(0.0f, 2.0f, -3.0f));
 		model = glm::rotate(model, (float)glfwGetTime() * 1.0f, glm::vec3(0.5, 1.0f, 0.0f));
 		
 		mvp = projection * viewcamera * model;
-		std::cout << value_ptr(mvp) << std::endl;
 
 
 		glUniformMatrix4fv(getMVP, 1, GL_FALSE, value_ptr(mvp));
-		
+		//we need to structure this in a better way - we need to check for each object weather somthing is allowed or not
+		//glUniform1i(glGetUniformLocation(program, "isMultipletextureTrue"), 1);
+		glUniform1i(glGetUniformLocation(program, "istextureTrue"), 1);
+
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, newShape3D->GetTextureTwo());
+		glUniform1i(glGetUniformLocation(program, "textureOne"), 0);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, newShape3D->GetTextureOne());
+		glUniform1i(glGetUniformLocation(program, "textureTwo"), 1);
+
+		//pass colour as uniform i guess
 		//This is where we draw the new shape
 		newShape3D->RenderShapeMain();
-
+		
 
 		//model2 = glm::translate(model, glm::vec3(1.0f, 3.0f, -3.0f));
-		//model2 = glm::rotate(model, (float)glfwGetTime() * 1.0f, glm::vec3(0.5, 1.0f, 0.0f));
+		model2 = glm::rotate(model2, (float)glfwGetTime() * 1.0f, glm::vec3(0.5, 1.0f, 0.0f));
 		mvp = projection * viewcamera * model2;
+
+		//Lets write some code here with conditions on how to render different colours
+		
+		// hopefully this works
 		glUniformMatrix4fv(getMVP, 1, GL_FALSE, value_ptr(mvp));
+		//glUniform1i(glGetUniformLocation(program, "istextureTrue"), 1);
+		
+		glUniform1i(glGetUniformLocation(program, "istextureTrue"), 1);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, renderShape2->GetTexture());
+		glUniform1i(glGetUniformLocation(program, "textureOne"), 0);
+		glActiveTexture(GL_TEXTURE1);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, 0);
+		//glUniform1i(glGetUniformLocation(program, "textureTwo"), 1);
+
 		renderShape2->RenderShapeMain();
 
 		
-		lastFrame = current;
-		//newShape3D->RenderShapeMain();
 		
 
+
+		lastFrame = current;
 		
 		glfwSwapBuffers(OpenGLWindow->GetWindow());
 		

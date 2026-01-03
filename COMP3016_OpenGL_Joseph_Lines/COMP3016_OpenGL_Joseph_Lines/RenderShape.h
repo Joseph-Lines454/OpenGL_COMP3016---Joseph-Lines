@@ -21,18 +21,18 @@ protected:
 	int indiciesAmount;
 	unsigned int VAO;
 	const char* imageurl;
+	const char* MixingURL;
 	unsigned int texture;
 	int stride;
+	GLuint program;
 	void TextureRender()
 	{
 		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
 		glEnableVertexAttribArray(2);
-
-		std::cout << "Here" << std::endl;
 		glGenTextures(1, &texture);
 		//Binding
 		glBindTexture(GL_TEXTURE_2D, texture);
-
+		glUniform1i(glGetUniformLocation(program, "istextureTrue"), 1);
 		//params: type of texture, texure option and appropriate axis and texure wrapping mode
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
@@ -41,13 +41,20 @@ protected:
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		//Loading an image into openGL, upon a quad
 		int width, height, nrChannels;
+		stbi_set_flip_vertically_on_load(true);
 		unsigned char* data = stbi_load(imageurl, &width, &height, &nrChannels, 0);
-		//assign ID
-
 		if (data)
 		{
 			std::cout << "We have found data!" << std::endl;
 		}
+
+
+		
+		
+
+		//assign ID
+
+		
 
 		//first param asks how many text second is where it stores
 
@@ -60,7 +67,7 @@ protected:
 
 public:
 	RenderShape() {};
-	RenderShape(std::vector<unsigned int> indiciesOrder, std::vector<float> verticies, int indiciesAmount, const char* imageurl, int stride)
+	RenderShape(std::vector<unsigned int> indiciesOrder, std::vector<float> verticies, int indiciesAmount, const char* imageurl, int stride, GLuint program)
 	{
 		//this->indiciesTotal = verteciesTotal;
 		this->indicies = indiciesOrder;
@@ -68,6 +75,11 @@ public:
 		this->indiciesAmount = indiciesAmount;
 		this->imageurl = imageurl;
 		this->stride = stride;
+		this->program = program;
+	}
+	unsigned int GetTexture()
+	{
+		return texture;
 	}
 	void ShapeInitialization()
 	{
@@ -105,6 +117,8 @@ public:
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof(float), (void*)0);
 		glEnableVertexAttribArray(0);
 
+		//if we have two textures we can look here and do somthing
+
 		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride * sizeof(float), (void*)(3 * sizeof(float)));
 		glEnableVertexAttribArray(1);
 		//This needs to be conditional
@@ -112,6 +126,10 @@ public:
 		if (imageurl != NULL)
 		{
 			TextureRender();
+		}
+		else
+		{
+			glUniform1i(glGetUniformLocation(program, "istextureTrue"), 0);
 		}
 		
 
@@ -125,29 +143,10 @@ public:
 
 	void RenderShapeMain()
 	{
-		
-		//actual floating point for each vertex is 2 and has an offest of 2 ()
-		
-		
-		//glm::mat4 model = glm::mat4(1.0f);
-		//model = glm::rotate(model, glm::radians(-45.0f), glm::vec3(0.5, 1.0f, 0.0f));
-		//glm::mat4 view = glm::mat4(1.0f);
-		//view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-		//glm::mat4 projection;
-		//projection = glm::perspective(glm::radians(45.0f), (float)width / (float)height, 0.1f, 100.0f);
-
-		
-
-		//std::cout << "Here!" << std::endl;
-		//std::cout << value_ptr(mvp) << std::endl;
-		//glm::mat4 mvp = projection * view * model;
-		//glUniformMatrix4fv(getMVP, 1, GL_FALSE, value_ptr(mvp));
-
 		glBindVertexArray(VAO);
 		
 		glBindTexture(GL_TEXTURE_2D, texture);
-		// get indice amount by dividing total bytes by bytes of one value
-		
+		// get indice amount by dividing total bytes by bytes of one value	
 		glDrawElements(GL_TRIANGLES, indiciesAmount, GL_UNSIGNED_INT, 0);
 		//glDrawArrays(GL_TRIANGLES, 0, 36);
 	}
