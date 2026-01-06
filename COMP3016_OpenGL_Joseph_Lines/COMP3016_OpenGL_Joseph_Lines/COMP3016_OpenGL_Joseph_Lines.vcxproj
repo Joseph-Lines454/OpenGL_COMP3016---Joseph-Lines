@@ -71,12 +71,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\include;C:\Users\pring\OneDrive\Documents\COMP3016 - OpenGL - Joseph_Lines\COMP3016_OpenGL_Joseph_Lines\Assimp\Source\assimp\include;C:\Users\pring\OneDrive\Documents\COMP3016 - OpenGL - Joseph_Lines\COMP3016_OpenGL_Joseph_Lines\Assimp\Binaries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\lib;C:\Users\pring\OneDrive\Documents\COMP3016 - OpenGL - Joseph_Lines\COMP3016_OpenGL_Joseph_Lines\Assimp\Binaries\lib\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\include;C:\Users\pring\OneDrive\Documents\COMP3016 - OpenGL - Joseph_Lines\COMP3016_OpenGL_Joseph_Lines\Assimp\Source\assimp\include;C:\Users\pring\OneDrive\Documents\COMP3016 - OpenGL - Joseph_Lines\COMP3016_OpenGL_Joseph_Lines\Assimp\Binaries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\lib;C:\Users\pring\OneDrive\Documents\COMP3016 - OpenGL - Joseph_Lines\COMP3016_OpenGL_Joseph_Lines\Assimp\Binaries\lib\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -114,7 +114,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;glew32s.lib;assimp-vc143-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -129,7 +129,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;glew32s.lib;assimp-vc143-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\shaders\LoadShaders.h" />
+    <ClInclude Include="Biomes.h" />
     <ClInclude Include="Shapes3D.h" />
     <ClInclude Include="LoadShaders.h" />
     <ClInclude Include="RenderShape.h" />

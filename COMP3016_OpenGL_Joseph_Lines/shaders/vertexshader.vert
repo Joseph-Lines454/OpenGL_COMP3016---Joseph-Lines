@@ -11,6 +11,6 @@ uniform mat4 Model_View_Projection;
 void main()
 {
   gl_Position = Model_View_Projection * vec4(aPos.x,aPos.y,aPos.z, 1.0);
-  ourColour = vec3(0.5,0.0,0.0);
+  ourColour = aColour;
   FragCord = textureIn;
 }

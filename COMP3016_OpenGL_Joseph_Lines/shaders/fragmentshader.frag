@@ -12,13 +12,11 @@ uniform sampler2D textureOne;
 uniform sampler2D textureTwo;
 
 void main()
-{
-   
+{   
    if (istextureTrue)
     FragColour = mix(texture(textureOne, FragCord), texture(textureTwo, FragCord), 0.5);
    
    else
-    FragColour = vec4(ColourUni,1.0f);
-    
-   
+    FragColour = vec4(ourColour,1.0f);
+
 }

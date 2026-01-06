@@ -56,6 +56,9 @@
     <ClInclude Include="Shapes3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Biomes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\shaders\vertexshader.vert">
