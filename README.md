@@ -2,16 +2,24 @@
 
 
 Video:
+https://www.youtube.com/watch?v=oTv9p9YkjPY
 
 IMPORTANT:
-All file paths are working correctly for the project, however Github is automatically deleting duplicate ASSIMP files for visual studio code (OpenGL_COMP3016---Joseph-Lines-main\COMP3016_OpenGL_Joseph_Lines\Assimp\Source). The executable is fine. The local version of the project (the one attached to moodle) will have the duplicated files and work execute correctly. However if you use Github copy the files from (OpenGL_COMP3016---Joseph-Lines-main\COMP3016_OpenGL_Joseph_Lines\Executable\COMP3016_OpenGL_Joseph_Lines\Assimp\Source\assimp) into the file path specified above. I can not change the filepath of one becuase of the Linker - this is somthing outside of my control, sorry.
+All file paths are working correctly for the project, however Github is automatically deleting duplicate ASSIMP files for visual studio code (OpenGL_COMP3016---Joseph-Lines-main\COMP3016_OpenGL_Joseph_Lines\Assimp\Source). The executable is fine. The local version of the project (the one attached to moodle) will have the duplicated files and will execute correctly. However if you use Github copy the files from (OpenGL_COMP3016---Joseph-Lines-main\COMP3016_OpenGL_Joseph_Lines\Executable\COMP3016_OpenGL_Joseph_Lines\Assimp\Source\assimp) into the file path specified above. I can not change the filepath of one becuase of the Linker - this is somthing outside of my control, sorry.
 
+TurboSquid Model Assets:
+
+https://www.turbosquid.com/3d-models/3d-model-animals-free-209858
 
 Instructions now how to run:
+
+To Run EXE, a directory you should have a directory called Executable. Go into it and Click in once more, click executable again then click COMP3016_OpenGL_Joseph_Lines.exe
 
 Controls:
 Use Mouse to move around
 Use awsd to move around the scene.
+use shift to speed up
+
 
 Dpendences Used:
 CMAKE/ASSIMP
