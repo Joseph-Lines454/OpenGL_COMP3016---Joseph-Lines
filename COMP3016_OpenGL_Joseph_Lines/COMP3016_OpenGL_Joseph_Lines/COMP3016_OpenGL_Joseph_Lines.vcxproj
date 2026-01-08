@@ -71,12 +71,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\include;C:\Users\pring\OneDrive\Documents\COMP3016 - OpenGL - Joseph_Lines\COMP3016_OpenGL_Joseph_Lines\Assimp\Source\assimp\include;C:\Users\pring\OneDrive\Documents\COMP3016 - OpenGL - Joseph_Lines\COMP3016_OpenGL_Joseph_Lines\Assimp\Binaries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\lib;C:\Users\pring\OneDrive\Documents\COMP3016 - OpenGL - Joseph_Lines\COMP3016_OpenGL_Joseph_Lines\Assimp\Binaries\lib\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\include;..\..\COMP3016_OpenGL_Joseph_Lines\Assimp\Source\assimp\include;..\..\COMP3016_OpenGL_Joseph_Lines\Assimp\Binaries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\lib;..\..\COMP3016_OpenGL_Joseph_Lines\Assimp\Binaries\lib\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\include;C:\Users\pring\OneDrive\Documents\COMP3016 - OpenGL - Joseph_Lines\COMP3016_OpenGL_Joseph_Lines\Assimp\Source\assimp\include;C:\Users\pring\OneDrive\Documents\COMP3016 - OpenGL - Joseph_Lines\COMP3016_OpenGL_Joseph_Lines\Assimp\Binaries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\lib;C:\Users\pring\OneDrive\Documents\COMP3016 - OpenGL - Joseph_Lines\COMP3016_OpenGL_Joseph_Lines\Assimp\Binaries\lib\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\include;..\..\COMP3016_OpenGL_Joseph_Lines\Assimp\Source\assimp\include;..\..\COMP3016_OpenGL_Joseph_Lines\Assimp\Binaries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\COMP3016_OpenGL_Joseph_Lines\OpenGL\lib;..\..\COMP3016_OpenGL_Joseph_Lines\Assimp\Binaries\lib\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
