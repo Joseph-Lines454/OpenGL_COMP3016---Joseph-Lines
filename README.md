@@ -3,6 +3,10 @@
 
 Video:
 
+IMPORTANT:
+All file paths are working correctly for the project, however Github is automatically deleting duplicate ASSIMP files for visual studio code (OpenGL_COMP3016---Joseph-Lines-main\COMP3016_OpenGL_Joseph_Lines\Assimp\Source). The executable is fine. The local version of the project (the one attached to moodle) will have the duplicated files and work execute correctly. However if you use Github copy the files from (OpenGL_COMP3016---Joseph-Lines-main\COMP3016_OpenGL_Joseph_Lines\Executable\COMP3016_OpenGL_Joseph_Lines\Assimp\Source\assimp) into the file path specified above. I can not change the filepath of one becuase of the Linker - this is somthing outside of my control, sorry.
+
+
 Instructions now how to run:
 
 Controls:
