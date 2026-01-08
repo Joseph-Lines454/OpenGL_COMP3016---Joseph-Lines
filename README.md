@@ -12,11 +12,12 @@ Use awsd to move around the scene.
 Dpendences Used:
 CMAKE/ASSIMP
 OPENGL
-GLEW/GLAD (GLAD is used)
+GLEW/GLAD (GLAD is used) KHR is within opengl folder and is apart of GLAD
 GLFW
 GLM
-KHR - This apart of GLAD
 LEARNOPENGL (Loading models, used within lab for loading models)
+FastNoiseLite.h
+
 
 GamePlay Description:
 
@@ -34,8 +35,8 @@ Ai has been used in an assistive capacity to help enchance knowledge and has bee
 
 
 All work is origonal. Below is a list of resources used to learn opengl and apply opengl:
-LearnOpenGL: https://learnopengl.com/
-COMP 3016 Labs
+LearnOpenGL: https://learnopengl.com/ - Main resource for learning and applying openGL
+COMP 3016 Labs (used this for procedural generation)
 Stack Overflow - General bugs
 Camera and Movement: https://www.youtube.com/watch?v=86_pQCKOIPk
 
@@ -83,6 +84,9 @@ Image of main play area (Rendering Biomes as well as objects)
 
 <img width="1279" height="711" alt="image" src="https://github.com/user-attachments/assets/2f7bb8a0-f626-4f14-919d-05461c1cda26" />
 
+UML Diagrams
+
+<img width="1252" height="809" alt="image" src="https://github.com/user-attachments/assets/f6e3615c-6b87-485b-9ad4-01f8815e3fa2" />
 
 
 
