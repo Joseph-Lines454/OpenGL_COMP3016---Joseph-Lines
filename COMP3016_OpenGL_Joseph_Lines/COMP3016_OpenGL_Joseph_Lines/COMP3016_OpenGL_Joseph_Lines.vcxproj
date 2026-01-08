@@ -141,7 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\shaders\LoadShaders.h" />
-    <ClInclude Include="Biomes.h" />
     <ClInclude Include="Shapes3D.h" />
     <ClInclude Include="LoadShaders.h" />
     <ClInclude Include="RenderShape.h" />

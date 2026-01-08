@@ -21,7 +21,7 @@ protected:
 	int indiciesAmount;
 	unsigned int VAO;
 	const char* imageurl;
-	const char* MixingURL;
+	
 	unsigned int texture;
 	int stride;
 	GLuint program;

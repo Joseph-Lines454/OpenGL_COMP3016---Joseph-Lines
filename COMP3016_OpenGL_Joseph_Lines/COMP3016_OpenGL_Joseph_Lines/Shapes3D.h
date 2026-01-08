@@ -8,15 +8,9 @@
 class Shapes3D : RenderShape {
 	//Want this way because its dyamic to allow for differnt verticies to be inputted
 private:
-	std::vector<float> verticies;
-	unsigned int VAO;
-	const char* imageurl;
 	const char* MixingURL;
 	unsigned int texture;
-	glm::mat4 view = glm::mat4(1.0f);
-	glm::mat4 projection;
-	glm::mat4 model = glm::mat4(1.0f);
-	int stride;
+
 	unsigned int mixingTexture;
 	void TextureRender()
 	{
@@ -70,15 +64,22 @@ private:
 		//Loading an image into openGL, upon a quad
 		
 		stbi_set_flip_vertically_on_load(true);
-		data = stbi_load(MixingURL, &width, &height, &nrChannels, 0);
+		if (MixingURL != NULL)
+		{
+			data = stbi_load(MixingURL, &width, &height, &nrChannels, 0);
+			if (data)
+			{
+				std::cout << "We have found data! I think..." << std::endl;
+				glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+				glGenerateMipmap(GL_TEXTURE_2D);
+				
+			}
+			stbi_image_free(data);
+		}
+		
 		//assign ID
 
-		if (data)
-		{
-			std::cout << "We have found data! I think..." << std::endl;
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-			glGenerateMipmap(GL_TEXTURE_2D);
-		}
+		
 		else
 		{
 			std::cout << stbi_failure_reason << std::endl;
@@ -88,7 +89,7 @@ private:
 		//first param asks how many text second is where it stores
 		std::cout << "we made it here..." << std::endl;
 		//Clearing from memory - we can now load our second image
-		stbi_image_free(data);
+		
 		
 		//glUniform1i(glGetUniformLocation(program, "tex"), 0);
 		//pass this data into the vertex shader - uniforms?
@@ -107,8 +108,7 @@ public:
 	}
 	void ShapeInitialization(float width, float height)
 	{
-		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -5.0f));
-		projection = glm::perspective(glm::radians(45.0f), (float)width / (float)height, 0.1f, 100.0f);
+		
 		//generate an ID for our VAO
 		//unsigned int VAO;
 		//here we are generating a unique ID for the VAO

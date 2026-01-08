@@ -18,6 +18,7 @@
 #include <learnopengl/shader_m.h>
 #include <learnopengl/model.h>
 #include "FastNoiseLite.h"
+
 #define RENDER_DISTANCE 128
 #define MAP_SIZE RENDER_DISTANCE * RENDER_DISTANCE
 
@@ -67,14 +68,15 @@ int main()
 	//glUseProgram(program);
 
 	RenderShape* renderShape2 = new RenderShape({ 0,1,3, 1,2,3 }, {
-		0.5f, 0.5f,0.0f,    0.1f, 0.5f, 0.0f,   1.0f,1.0f,  // top right
-		0.5f,-0.5f,0.0f,    0.5f, 0.0f,0.0f,   1.0f,0.0f,  //bottom right
-		-0.5f,-0.5f,0.0f,   0.5f,0.0f,0.0f,    0.0f,0.0f, //bottom left
-		-0.5f,0.5f,0.0f,    0.5f,0.0f,0.0f,      0.0f,1.0f, // top left
+		0.5f, 0.5f,0.0f,    0.1f, 0.5f, 0.0f,   1.0f,1.0f,  
+		0.5f,-0.5f,0.0f,    0.5f, 0.0f,0.0f,   1.0f,0.0f,  
+		-0.5f,-0.5f,0.0f,   0.5f,0.0f,0.0f,    0.0f,0.0f, 
+		-0.5f,0.5f,0.0f,    0.5f,0.0f,0.0f,      0.0f,1.0f,
 
 
 	}, 36, "../../COMP3016_OpenGL_Joseph_Lines/textures_and_media/joseph_lines_signiture.jpg",8, program);
 	
+
 	Shapes3D* newShape3D = new Shapes3D({ 
 	-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 	 0.5f, -0.5f, -0.5f, 1.0f, 0.0f,
@@ -287,10 +289,6 @@ int main()
 		terrainVerticies[i][0] = columnVerticiesOffset;
 		terrainVerticies[i][2] = rowVerticiesOffset;
 
-		//terrainVerticies[i][3] = 0.0f;
-		//terrainVerticies[i][4] = 0.50f;
-		//terrainVerticies[i][5] = 0.10f;
-
 		columnVerticiesOffset = columnVerticiesOffset + -0.0625f;
 
 		rowIndex++;
@@ -384,6 +382,7 @@ int main()
 	float counter = 0.0f;
 	int minVal = 0.0f;
 	
+
 	while (glfwWindowShouldClose(OpenGLWindow->GetWindow()) == false)
 	{
 		glm::mat4 model = glm::mat4(1.0f);
@@ -395,7 +394,7 @@ int main()
 		float current = glfwGetTime();
 		deltaTime = current - lastFrame;
 		
-
+		
 		OpenGLWindow->ProcessUserInput(User_Look_Position, cameraDirectonVec, cameraUp_Y, deltaTime, float(height), float(width));
 		viewcamera = glm::lookAt(User_Look_Position, User_Look_Position + cameraDirectonVec, cameraUp_Y);
 		//projection2 = glm::perspective(glm::radians(45.0f), (float)width / (float)height, 0.1f, 100.0f);
@@ -468,7 +467,7 @@ int main()
 		//we need to add some animation code - 
 		//we want to make the tiger move
 		
-		model_Tiger = glm::translate(model_Tiger, glm::vec3((float)glfwGetTime(), 0.0f, 0.0f));
+		model_Tiger = glm::rotate(model_Tiger, glm::radians((float)glfwGetTime() * 0.5f), glm::vec3(0.0f, 1.0f, 1.0f));
 	
 		
 		//model_Tiger = glm::translate(model_Tiger,glm::vec3(1.0f, 0.0f, 0.0f));

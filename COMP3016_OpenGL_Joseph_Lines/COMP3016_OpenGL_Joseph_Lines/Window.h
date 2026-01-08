@@ -31,7 +31,7 @@ public:
 
 		glViewport(0, 0, width, height);
 	}
-	void windowUp()
+	int windowUp()
 	{
 		glfwInit();
 		window = glfwCreateWindow(1280, 720, "OpenGLWindow", NULL, NULL);
@@ -41,16 +41,17 @@ public:
 		{
 			std::cout << "Window has not initialized!" << std::endl;
 			glfwTerminate();
+			return -1;
 		}
+		
 		glfwMakeContextCurrent(window);
 
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 		{
 			std::cout << "Could not initliaze GLAD" << std::endl;
-
+			return -1;
 		}
 
-		//glewInit();
 		glViewport(0, 0, 1280, 720);
 		
 
